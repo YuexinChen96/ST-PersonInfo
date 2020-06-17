@@ -1,0 +1,9 @@
+{
+  "pages": [
+    "pages/workExp/workExp"
+
+  ],
+  "window": {
+    "defaultTitle": "加载中"
+  }
+}

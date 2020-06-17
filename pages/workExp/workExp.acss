@@ -1,0 +1,184 @@
+page {
+  border-top: #D8D8D8 solid 1rpx;
+  padding: 30rpx 0 0 0;
+  position: relative;
+  height: 100vh;
+  z-index: 0;
+}
+
+.higher_layer {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+  opacity: 0.01%;
+}
+
+.item-box {
+  position: relative;
+  display: flex;
+  height: 58rpx;
+  margin: 30rpx 30rpx 30rpx 30rpx;
+  padding: 24rpx 0 0 20rpx;
+  border: 1rpx #E5E5E5 solid;
+  white-space: nowrap;
+  border-radius: 4rpx;
+}
+
+.static {
+  display: flex;
+  position: relative;
+  margin-top: 2rpx;
+}
+
+.icon {
+  position: relative;
+  margin-top: -2rpx;
+  margin-right: 16rpx;
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.index {
+  width: 112rpx;
+  color: #868686;
+  font-size: 28rpx;
+}
+
+.inputbox {
+  padding: 0 0 0 0 auto;
+}
+
+.input_ {
+  width: 420rpx;
+  margin-left: 30rpx;
+  height: 28rpx;
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.sel_img {
+  margin-top: 9rpx;
+  background: url(../img/workepx2.png) no-repeat;
+  position: absolute;
+  height: 10rpx;
+  width: 20rpx;
+  right: 50rpx;
+}
+
+.submit-1 {
+  display: flex;
+  position: fixed;
+  width: 750rpx;
+  height: 150rpx;
+  bottom: 0;
+  border-top: 1rpx solid #E5E5E5;
+}
+
+.submit-s {
+  border-radius: 4rpx;
+  width: 690rpx;
+  height: 90rpx;
+  margin: 30rpx 0rpx 0rpx 30rpx;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  text-align: center;
+  background-color: #51A6FF;
+  color: white;
+}
+
+.delete {
+  border-radius: 4rpx;
+  width: 250rpx;
+  height: 90rpx;
+  margin: 30rpx 0 0 30rpx;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  text-align: center;
+  color: #FF3366;
+  border: 1rpx solid #FF3366;
+}
+
+.submit-b {
+  border-radius: 4rpx;
+  width: 420rpx;
+  height: 90rpx;
+  margin: 30rpx 0 0 30rpx;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  text-align: center;
+  background-color: #51A6FF;
+  color: white;
+}
+
+.iconBar {
+  display: flex;
+  flex-direction: column;
+  margin: 51rpx 0 0 -650rpx;
+  width: 460rpx;
+  height: 400rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0rpx 0rpx 32rpx 14rpx rgba(234, 239, 242, 0.5);
+  border-radius: 8rpx;
+  z-index: 1;
+}
+
+.bar_title {
+  text-align: center;
+  margin-top: 30rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  color: rgba(51, 51, 51, 1);
+  line-height: 33rpx;
+}
+
+.detail_box {
+  margin: 30rpx 0 0 30rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail_row {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+}
+
+.detail_image {
+  background: url(../img/workexp-1.png) no-repeat;
+  width: 26rpx;
+  height: 26rpx;
+}
+
+.detail_date {
+  margin-left: 9rpx;
+  width: 289rpx;
+  height: 22rpx;
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  line-height: 28rpx;
+}
+
+.black {
+  margin-top: 8rpx;
+  width: 289rpx;
+  height: 33rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 33rpx;
+}
+
+.grey {
+  margin-top: 17rpx;
+  width: 289rpx;
+  height: 33rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  line-height: 33rpx;
+}

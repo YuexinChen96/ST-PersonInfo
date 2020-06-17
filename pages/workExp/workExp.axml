@@ -1,0 +1,88 @@
+<view class="higher_layer" a:if="{{higher_layer}}" onTap="hlayer_tap">
+</view>
+
+
+<view class="item-box" a:for="{{array}}">
+  <view class="static" a:if="{{item.changed==true}}">
+    <image class="icon" onTap="iconState" src="../img/icon_check.png" data-id="{{index}}">  
+    </image>
+    <view class="index">
+      {{item.index}}
+    </view>
+    
+  </view>
+  <view class="static" a:else>
+    <view class="index">
+      {{item.index}}
+    </view>
+  </view>
+
+  <view>
+    <view class="inputbox" a:if="{{first_page==1||first_page==2}}">
+      
+      <view a:if="{{item.selection && index == 3}}">
+        <picker onChange="bindPickerChange" value="{{index}}" range="{{t_array}}">
+        <view class="picker input_">当前选择：{{t_array[index]}}</view>
+      </view>
+      <view a:elif="{{item.selection && index == 4}}">
+        <picker onChange="bindPickerChange" value="{{index}}" range="{{f_array}}">
+        <view class="picker input_">{{f_array[index]}}</view>
+      </view>
+      <view a:else>
+        <input class="input_" a:if="{{item.selection||item.date}}" value="{{item.value}}" data-id="{{index}}" onFocus="input_tap" placeholder="{{item.placeholder}}">
+        </input>
+        <input class="input_ " a:else type="string" value="{{item.value}}" data-id="{{index}}" onBlur="input_blur" placeholder="{{item.placeholder}}">
+        </input>
+        <image onTap="input_tap" src="../img/workepx2.png" class="sel_img" a:if="{{item.selection||item.date}}">
+        </image>
+      </view>
+    </view>
+
+
+    <view a:else>
+      <input class="input_" disabled="false" type="string" data-id="{{index}}" onBlur="input_blur" value="{{item.value}}" placeholder="{{item.placeholder}}">
+      </input>
+      <image onTap="input_tap" src="../img/workepx2.png" class="sel_img" a:if="{{item.selection||item.date}}">
+      </image>
+    </view>
+    
+    
+  </view>
+
+  <view a:if="{{item.icon_tap}}" class="iconBar">
+    <view class="bar_title">变更明细
+    </view>
+    <view class="detail_box" a:for="{{changes}}">
+      <view class="detail_row">
+        <image class="detail_image" src="../img/icon_check.png">
+        </image>
+        <view class="detail_date">{{item.date}}
+        </view>
+      </view>
+      <view class="grey">{{item.before}}
+      </view>
+      <view class="black">{{item.now}}
+      </view>
+    <view>
+  </view>
+</view>
+
+
+
+<view a:if="{{first_page==1}}" class="submit-1">
+  <view class="submit-s" onTap="submit">
+    保存
+  </view>
+</view>
+<view a:elif="{{first_page==2}}" class="submit-2">
+  <view class="submit-1">
+    <view class="delete" onTap="delete_tap">
+    删除当前记录
+    </view>
+    <view class="submit-b" onTap="submit">
+    保存
+    </view>
+  </view>
+</view>
+<view a:else>
+</view>
