@@ -34,6 +34,8 @@
       <view a:else>
         <input class="input_" a:if="{{item.selection||item.date}}" value="{{item.value}}" data-id="{{index}}" onFocus="input_tap" placeholder="{{item.placeholder}}">
         </input>
+        <input class="input_" a:elif="{{item.phone}}" value="{{item.value}}" data-id="{{index}}" onBlur="phone_check" placeholder="{{item.placeholder}}">
+        </input>
         <input class="input_ " a:else type="string" value="{{item.value}}" data-id="{{index}}" onBlur="input_blur" placeholder="{{item.placeholder}}">
         </input>
         <image onTap="input_tap" src="../img/workepx2.png" class="sel_img" a:if="{{item.selection||item.date}}">

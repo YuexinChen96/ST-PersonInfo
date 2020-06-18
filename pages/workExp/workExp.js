@@ -95,6 +95,7 @@ Page({
         "changed": false,
         "date": false,
         "icon_tap": false,
+        "phone": true,
       }];
     } else if (test.type === "edu") {
       struct = [{
@@ -148,16 +149,16 @@ Page({
 
 
   onLoad: function (e) {
-    var test = {
-      type: "workExp",
-      name: "南京中央商场(集团)股份有限公司",
-      position: "中心店营业管理部内务主管",
-      start_time: "2016-06-06",
-      end_time: "2020-06-06",
-      reason: "变动原因是巴拉巴拉变身！",
-      array: [false, true, false, false, false],
-      page_number: 2
-    };
+    // var test = {
+    //   type: "workExp",
+    //   name: "南京中央商场(集团)股份有限公司",
+    //   position: "中心店营业管理部内务主管",
+    //   start_time: "2016-06-06",
+    //   end_time: "2020-06-06",
+    //   reason: "变动原因是巴拉巴拉变身！",
+    //   array: [false, true, false, false, false],
+    //   page_number: 2
+    // };
     // var test = {
     //   type: "edu",
     //   school: "南京市商业职工中等专业学校",
@@ -169,16 +170,16 @@ Page({
     //   array: [true, false, false, false, false, false],
     //   page_number: 2
     // }
-    // var test = {
-    //   type: "family",
-    //   name: "张三",
-    //   relationship: "父亲",
-    //   birth: "",
-    //   work_space: "南京市江宁区双龙大道",
-    //   phone: "13723490987",
-    //   array: [false, false, false, true, true],
-    //   page_number: 1
-    // }
+    var test = {
+      type: "family",
+      name: "张三",
+      relationship: "父亲",
+      birth: "",
+      work_space: "南京市江宁区双龙大道",
+      phone: "13723490987",
+      array: [false, false, false, true, true],
+      page_number: 1
+    }
     this.init(test);
     if (test.type === "workExp") {
       if (test.page_number === 2 || test.page_number === 3) {
@@ -252,6 +253,18 @@ Page({
     });
   },
 
+  phone_check: function(e){
+    let that = this;
+    var curr_input = e.detail.value;
+    var curr_index = e.currentTarget.dataset.id;
+    var temp = this.data.array;
+    temp[curr_index].value = curr_input;
+    this.setData({
+      array: temp
+    });
+    console.log("this is a phone number");
+  },
+
   input_tap: function (e) {
     var that = this;
     var submit_date = this.data.array;
@@ -264,7 +277,6 @@ Page({
         format: 'yyyy-MM-dd',
         currentDate: '2020-06-06',
         success: (res) => {
-          //console.log(res);
           if (Object.keys(res).length !== 0) {
             submit_date[curr_index].value = res.date;
             that.setData({
