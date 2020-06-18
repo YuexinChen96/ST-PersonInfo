@@ -1,7 +1,7 @@
 Page({
   data: {
     array: [],
-    "first_page": 1,
+    "page_number": 1,
     t_array:["中俄","美日"],
     f_array:["1","2"],
     higher_layer: false,
@@ -156,7 +156,7 @@ Page({
       end_time: "2020-06-06",
       reason: "变动原因是巴拉巴拉变身！",
       array: [false, true, false, false, false],
-      first_page: 2
+      page_number: 2
     };
     // var test = {
     //   type: "edu",
@@ -167,7 +167,7 @@ Page({
     //   edu_rank: "职高",
     //   edu_spe: "营销",
     //   array: [true, false, false, false, false, false],
-    //   first_page: 2
+    //   page_number: 2
     // }
     // var test = {
     //   type: "family",
@@ -177,11 +177,11 @@ Page({
     //   work_space: "南京市江宁区双龙大道",
     //   phone: "13723490987",
     //   array: [false, false, false, true, true],
-    //   first_page: 1
+    //   page_number: 1
     // }
     this.init(test);
     if (test.type === "workExp") {
-      if (test.first_page === 2 || test.first_page === 3) {
+      if (test.page_number === 2 || test.page_number === 3) {
         var temp = this.data.array;
         temp[0].value = test.name;
         temp[1].value = test.position;
@@ -199,7 +199,7 @@ Page({
         title: "入司前工作经历"
       })
     } else if (test.type === "edu") {
-      if (test.first_page === 2 || test.first_page === 3) {
+      if (test.page_number === 2 || test.page_number === 3) {
         var temp = this.data.array;
         temp[0].value = test.school;
         temp[1].value = test.start_time;
@@ -218,7 +218,7 @@ Page({
         title: "教育经历"
       })
     } else if (test.type === "family") {
-      if (test.first_page === 2  || test.first_page === 3) {
+      if (test.page_number === 2  || test.page_number === 3) {
         var temp = this.data.array;
         temp[0].value = test.name;
         temp[1].value = test.relationship;
@@ -237,7 +237,7 @@ Page({
       })
     }
     this.setData({
-      first_page: test.first_page
+      page_number: test.page_number
     });
   },
 

@@ -1,28 +1,31 @@
+<!-- Higher layer cover to achieve icon box -->
 <view class="higher_layer" a:if="{{higher_layer}}" onTap="hlayer_tap">
 </view>
 
-
+<!-- Iteration to create item box -->
 <view class="item-box" a:for="{{array}}">
+  <!-- Whether show icon image. Static: icon + content -->
   <view class="static" a:if="{{item.changed==true}}">
     <image class="icon" onTap="iconState" src="../img/icon_check.png" data-id="{{index}}">  
     </image>
     <view class="index">
       {{item.index}}
     </view>
-    
   </view>
+
   <view class="static" a:else>
     <view class="index">
       {{item.index}}
     </view>
   </view>
 
+  <!-- Input area -->
   <view>
-    <view class="inputbox" a:if="{{first_page==1||first_page==2}}">
-      
+    <view class="inputbox" a:if="{{page_number==1||page_number==2}}">
+      <!-- Select Input mode or Selection mode, disable input in page 3. -->
       <view a:if="{{item.selection && index == 3}}">
         <picker onChange="bindPickerChange" value="{{index}}" range="{{t_array}}">
-        <view class="picker input_">当前选择：{{t_array[index]}}</view>
+        <view class="picker input_">{{t_array[index]}}</view>
       </view>
       <view a:elif="{{item.selection && index == 4}}">
         <picker onChange="bindPickerChange" value="{{index}}" range="{{f_array}}">
@@ -38,9 +41,9 @@
       </view>
     </view>
 
-
+    <!-- Pull selection icon and diable input in page 3 -->
     <view a:else>
-      <input class="input_" disabled="false" type="string" data-id="{{index}}" onBlur="input_blur" value="{{item.value}}" placeholder="{{item.placeholder}}">
+      <input class="input_" disabled="true" type="string" data-id="{{index}}" onBlur="input_blur" value="{{item.value}}" placeholder="{{item.placeholder}}">
       </input>
       <image onTap="input_tap" src="../img/workepx2.png" class="sel_img" a:if="{{item.selection||item.date}}">
       </image>
@@ -49,6 +52,7 @@
     
   </view>
 
+  <!-- Changed details for icon -->
   <view a:if="{{item.icon_tap}}" class="iconBar">
     <view class="bar_title">变更明细
     </view>
@@ -69,12 +73,12 @@
 
 
 
-<view a:if="{{first_page==1}}" class="submit-1">
+<view a:if="{{page_number==1}}" class="submit-1">
   <view class="submit-s" onTap="submit">
     保存
   </view>
 </view>
-<view a:elif="{{first_page==2}}" class="submit-2">
+<view a:elif="{{page_number==2}}" class="submit-2">
   <view class="submit-1">
     <view class="delete" onTap="delete_tap">
     删除当前记录
