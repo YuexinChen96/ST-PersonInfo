@@ -13,6 +13,10 @@ Page({
       date:"2020-06-08 13:02:12",
       before:"原值：南京",
       now:"修改后：上海",
+      },{
+      date:"2020-06-08 13:02:12",
+      before:"原值：南京",
+      now:"修改后：上海",
       }]
   },
 
@@ -144,16 +148,16 @@ Page({
 
 
   onLoad: function (e) {
-    // var test = {
-    //   type: "workExp",
-    //   name: "南京中央商场(集团)股份有限公司",
-    //   position: "中心店营业管理部内务主管",
-    //   start_time: "2016-06-06",
-    //   end_time: "2020-06-06",
-    //   reason: "变动原因是巴拉巴拉变身！",
-    //   array: [false, true, false, false, false],
-    //   first_page: 2
-    // };
+    var test = {
+      type: "workExp",
+      name: "南京中央商场(集团)股份有限公司",
+      position: "中心店营业管理部内务主管",
+      start_time: "2016-06-06",
+      end_time: "2020-06-06",
+      reason: "变动原因是巴拉巴拉变身！",
+      array: [false, true, false, false, false],
+      first_page: 2
+    };
     // var test = {
     //   type: "edu",
     //   school: "南京市商业职工中等专业学校",

@@ -113,6 +113,7 @@ page {
 
 .iconBar {
   display: flex;
+  padding-bottom: 30rpx;
   flex-direction: column;
   margin: 51rpx 0 0 -650rpx;
   width: 460rpx;
@@ -120,6 +121,7 @@ page {
   background: rgba(255, 255, 255, 1);
   box-shadow: 0rpx 0rpx 32rpx 14rpx rgba(234, 239, 242, 0.5);
   border-radius: 8rpx;
+  overflow: hidden;
   z-index: 1;
 }
 

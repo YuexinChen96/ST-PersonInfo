@@ -63,7 +63,7 @@
       </view>
       <view class="black">{{item.now}}
       </view>
-    <view>
+    </view>
   </view>
 </view>
 
@@ -83,6 +83,4 @@
     保存
     </view>
   </view>
-</view>
-<view a:else>
 </view>
